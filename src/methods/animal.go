@@ -47,7 +47,6 @@ func ParseLine(line string, animals map[string]Animal, methods map[string]func(_
 	if !exists {
 		return nil, nil, fmt.Errorf("No such method: %s", fields[1])
 	}
-
 	return &animal, method, nil
 }
 
