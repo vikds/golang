@@ -101,7 +101,7 @@ func main() {
 		}
 
 		sizes := GetSplitSizes(len(nums), 4)
-		ch := make(chan []int, sizes[0])
+		ch := make(chan []int, len(sizes))
 
 		pos := 0
 		for _, size := range sizes {
