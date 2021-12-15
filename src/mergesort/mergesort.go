@@ -39,14 +39,14 @@ func ParseLine(line string, nums *[]int) error {
 }
 
 func GetSplitSizes(n int, parts int) []int {
-	dividend := n / parts
-	remainder := n - parts*dividend
+	quotient := n / parts
+	remainder := n - parts*quotient
 	sizes := make([]int, 0)
 	for i := 0; i < parts; i++ {
-		if dividend == 0 && remainder == 0 {
+		if quotient == 0 && remainder == 0 {
 			break
 		}
-		sizes = append(sizes, dividend)
+		sizes = append(sizes, quotient)
 		if remainder > 0 {
 			sizes[i]++
 			remainder--
