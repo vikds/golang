@@ -53,12 +53,12 @@ func ParseLine(line string) ([]string, error) {
 
 func main() {
 	var (
-		cow           = Animal{"grass", "walk", "moo"}
-		bird          = Animal{"worms", "fly", "peep"}
-		snake         = Animal{"mice", "slither", "hsss"}
-		animals       = map[string]IAnimal{"cow": cow, "bird": bird, "snake": snake}
-		methods       = map[string]func(_ IAnimal){"eat": IAnimal.Eat, "move": IAnimal.Move, "speak": IAnimal.Speak}
-		named_animals = make(map[string]IAnimal)
+		cow          = Animal{"grass", "walk", "moo"}
+		bird         = Animal{"worms", "fly", "peep"}
+		snake        = Animal{"mice", "slither", "hsss"}
+		animals      = map[string]IAnimal{"cow": cow, "bird": bird, "snake": snake}
+		methods      = map[string]func(_ IAnimal){"eat": IAnimal.Eat, "move": IAnimal.Move, "speak": IAnimal.Speak}
+		namedAnimals = make(map[string]IAnimal)
 	)
 
 	for true {
@@ -79,12 +79,12 @@ func main() {
 					fmt.Println("No such animal (cow/bird/snake):", fields[2])
 					continue
 				}
-				named_animals[fields[1]] = animal
+				namedAnimals[fields[1]] = animal
 				fmt.Println("Created it!")
 			}
 		case "query":
 			{
-				animal, exists := named_animals[fields[1]]
+				animal, exists := namedAnimals[fields[1]]
 				if !exists {
 					fmt.Println("No such animal with the name:", fields[1])
 					continue
